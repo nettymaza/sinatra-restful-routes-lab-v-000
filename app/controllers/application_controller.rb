@@ -22,8 +22,8 @@ class ApplicationController < Sinatra::Base
 
   #Create action, responds to post request and creates a new recipe based on params set on form new.rb and saves it to database.
   post '/recipes' do
-    recipe = Recipe.create(:name => params[:name], :ingredients => params[:ingredients], :cook_time => params[:cook_time])
-    redirect "/recipes/#{recipe.id}"
+    @recipe = Recipe.create(:name => params[:name], :ingredients => params[:ingredients], :cook_time => params[:cook_time])
+    redirect "/recipes/#{@recipe.id}"
   end
 
   get '/recipes/:id' do
