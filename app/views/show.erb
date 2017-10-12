@@ -1,8 +1,8 @@
 <h2>Your Recipe:</h2>
 <p>
-  Name: <%= @recipe.name %>
-  Ingredients: <%= @recipe.ingredients %>
-  Cook Time: <%= @recipe.cook_time %>
+  Name: <%= @Recipes.name %>
+  Ingredients: <%= @recipes.ingredients %>
+  Cook Time: <%= @recipes.cook_time %>
 </p>
 
 <form action="/recipes/<%= @recipes.id %>/delete" method="post">
