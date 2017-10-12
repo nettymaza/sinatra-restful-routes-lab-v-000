@@ -27,13 +27,13 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/recipes/:id' do
-    @recipes = Recipe.find_by_id(params[:id])
+    @recipe = Recipe.find_by_id(params[:id])
     erb :show
   end
 
   #Will load edit.erb page
   get '/recipes/:id/edit' do
-    @recipes = Recipe.find_by_id(params[:id])
+    @recipe = Recipe.find_by_id(params[:id])
     erb :edit
   end
 
@@ -48,8 +48,8 @@ class ApplicationController < Sinatra::Base
   end
 
   delete '/recipes/:id/delete' do #delete action
-    @recipes = Recipe.find_by_id(params[:id])
-    @recipes.delete
+    @recipe = Recipe.find_by_id(params[:id])
+    @recipe.delete
   end
 
 end
